@@ -36,7 +36,7 @@
         "before": false,
         "after": true
       }],
-      "no-unused-vars": ["error", { "varsIgnorePattern": "_" }],
+      "no-unused-vars": ["error", {"args": "after-used", "argsIgnorePattern": "^_$"}],
       "prefer-const": ["error", {
         "destructuring": "any",
         "ignoreReadBeforeAssign": false
