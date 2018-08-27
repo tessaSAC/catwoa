@@ -16,7 +16,7 @@ Vue.use(Vuetify, {
     success: '#00B0FF',
   },
   options: {
-    themeVariations: ['primary', 'secondary']
+    themeVariations: ['primary', 'secondary'],
   },
 })
 
