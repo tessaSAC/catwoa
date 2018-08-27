@@ -1,8 +1,12 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<v-app>
+  <v-toolbar app color="primary"></v-toolbar>
+  <v-content>
+    <v-container fluid>
+    </v-container>
+  </v-content>
+  <v-footer app color="secondary"></v-footer>
+</v-app>
 </template>
 
 <script>
