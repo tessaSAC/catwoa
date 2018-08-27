@@ -29,10 +29,27 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "prefer-const": ["error", {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }],
+      "block-spacing": "error",
+      "semi": ["error", "never"],
+      "quotes": ["error", "single"],
+      "comma-spacing": ["error", {
+        "before": false,
+        "after": true
+      }]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "postcss": {
     "plugins": {
