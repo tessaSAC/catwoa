@@ -25,6 +25,7 @@
     dark
     small
     color="warning"
+    @click="$emit('edit')"
   >
     <v-icon>edit</v-icon>
   </v-btn>
@@ -34,6 +35,7 @@
     dark
     small
     color="success"
+    @click="$emit('adopt')"
   >
     <v-icon>home</v-icon>
   </v-btn>
@@ -42,7 +44,7 @@
 
 <script>
 export default {
-  data: () => ({
+  data: _ => ({
     direction: 'left',
     fab: false,
     fling: false,
