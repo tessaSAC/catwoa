@@ -32,8 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .SinglePig {
-  color: white;
-
   + .SinglePig {
     margin-top: 2rem;
   }

@@ -38,17 +38,15 @@ export default {
     SinglePig,
   },
 
-  data() {
-    return {
-      currentPigs: [],
+  data: _ => ({
+    currentPigs: [],
 
-      numAdopted: 0,
+    numAdopted: 0,
 
-      pigNames: ['Fufbey', 'Spackles', 'After Pie', 'Dab', 'Pugger P', 'Snifket', 'Fuzzable', 'Fabsy', 'Dilrus', 'Gooper', 'Rockass', 'Bless', 'Hanger Dan', 'Nuzzy', 'Spockers', 'Mumkle', 'Splanky', 'Fubby', 'Dandan', 'Fleury White', 'Stargoon', 'Princess Pow', 'Popchop', 'Buzzberry', 'Me', 'Madly Mean', 'Pot', 'Mucky', 'Fusty', 'Fleshy', 'Trickles', 'Butty Brlomy', 'Moonyhen', 'Boooy',  'Bho8otteeddeeceul', ],
+    pigNames: ['Fufbey', 'Spackles', 'After Pie', 'Dab', 'Pugger P', 'Snifket', 'Fuzzable', 'Fabsy', 'Dilrus', 'Gooper', 'Rockass', 'Bless', 'Hanger Dan', 'Nuzzy', 'Spockers', 'Mumkle', 'Splanky', 'Fubby', 'Dandan', 'Fleury White', 'Stargoon', 'Princess Pow', 'Popchop', 'Buzzberry', 'Me', 'Madly Mean', 'Pot', 'Mucky', 'Fusty', 'Fleshy', 'Trickles', 'Butty Brlomy', 'Moonyhen', 'Boooy',  'Bho8otteeddeeceul', ],
 
-      selectedNames: [],
-    }
-  },
+    selectedNames: [],
+  }),
 
   computed: {
     availableNames() {
@@ -94,6 +92,7 @@ export default {
 
 .v-footer {
   justify-content: flex-end;
+  padding: 0 16px;
 }
 
 .counter {
