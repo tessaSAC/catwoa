@@ -1,9 +1,9 @@
 <template>
-<v-flex xs12 sm4 offset-sm4>
-  <v-card class="SinglePig" color="accent">
+<v-flex xs12 sm4 offset-sm4 class="SinglePig">
+  <v-card color="accent lighten-1">
 
     <v-card-title primary-title>
-      <div class="headline">
+      <div class="headline info--text">
         Pig name
       </div>
       <v-text-field
@@ -31,6 +31,14 @@ export default {
 
 
 <style lang="scss" scoped>
+.SinglePig {
+  color: white;
+
+  + .SinglePig {
+    margin-top: 2rem;
+  }
+}
+
 .v-card__ {
   &title {
     flex-direction: column;

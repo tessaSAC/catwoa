@@ -30,21 +30,20 @@
       "@vue/prettier"
     ],
     "rules": {
+      "array-element-newline": ["error", "never"],
+      "block-spacing": "error",
+      "comma-spacing": ["error", {
+        "before": false,
+        "after": true
+      }],
       "prefer-const": ["error", {
         "destructuring": "any",
         "ignoreReadBeforeAssign": false
       }],
-      "block-spacing": "error",
-      "semi": ["error", "never"],
-      "quotes": ["error", "single"],
-      "comma-spacing": ["error", {
-        "before": false,
-        "after": true
-      }]
+      "quotes": [ "error", "single" ],
+      "semi": ["error", "never"]
     },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+    "parserOptions": { "parser": "babel-eslint" }
   },
   "prettier": {
     "semi": false,
