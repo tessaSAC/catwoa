@@ -3,6 +3,7 @@
   <v-toolbar app color="primary"></v-toolbar>
   <v-content>
     <v-container fluid>
+      <VPig />
     </v-container>
   </v-content>
   <v-footer app color="secondary"></v-footer>
@@ -10,23 +11,18 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VPig from './components/VPig.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    VPig,
   },
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  overflow: hidden;
 }
 </style>
