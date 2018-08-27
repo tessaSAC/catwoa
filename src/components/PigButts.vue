@@ -57,8 +57,6 @@ export default {
     transition: 'slide-y-reverse-transition',
   }),
 
-  computed: {},
-
   watch: {
     top(val) {
       this.bottom = !val
