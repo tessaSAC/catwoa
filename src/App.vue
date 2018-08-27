@@ -4,7 +4,7 @@
   <v-toolbar app color="primary darken-2" dark>
     <v-toolbar-title>catwoa</v-toolbar-title>
     <v-spacer />
-    <v-btn outline color="warning">
+    <v-btn outline color="warning" @click="addPig">
       add new pig <v-icon right>library_add</v-icon>
     </v-btn>
   </v-toolbar>
@@ -14,13 +14,20 @@
       fluid
       align-content-space-around
     >
-      <SinglePig />
+      <SinglePig
+        v-for="({ name, desc }) in currentPigs"
+        :key="name"
+        :desc="desc"
+        :name="name"
+        @pigHomed="adopt"
+        @descChanged="changeDesc"
+      />
     </v-container>
   </v-content>
 
   <v-footer app color="secondary" height="50">
     <div class="counter">
-      <p class="count secondary--text">35</p>
+      <p class="count secondary--text">{{ numAdopted }}</p>
       <v-icon class="icon" color="white">home</v-icon>
     </div>
   </v-footer>
@@ -39,7 +46,7 @@ export default {
   },
 
   data: _ => ({
-    currentPigs: [],
+    currentPigs: [ { name: 'beepo', desc: 'hello' } ],
 
     numAdopted: 0,
 
@@ -63,9 +70,23 @@ export default {
       this.selectedNames.push(name)
     },
 
+    adopt(name) {
+      this.currentPigs.splice(this.findPig(name), 1)
+      this.selectedNames.splice(this.selectedNames.indexOf(name), 1)
+      ++this.numAdopted
+    },
+
+    changeDesc({ name, desc }) {
+      this.currentPigs[this.findPig(name)].desc = desc
+    },
+
     except(original, unwanted) {
       const set = new Set(unwanted)
       return original.filter(v => !set.has(v))
+    },
+
+    findPig(name) {
+      return this.currentPigs.findIndex(pig => pig.name === name)
     },
 
     shuffle(arr) {

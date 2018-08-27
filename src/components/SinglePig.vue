@@ -3,16 +3,29 @@
   <v-card color="accent lighten-1">
 
     <v-card-title primary-title>
+
       <div class="headline info--text">
-        Pig name
+        {{ name }}
       </div>
+
       <v-text-field
+        v-if="edit"
+        v-model="currentDesc"
         label="description"
+        @keyup.enter="changeDesc"
       />
+
+      <p v-else @click="edit = true">
+        {{ desc }}
+      </p>
+
     </v-card-title>
 
     <v-card-actions>
-      <PigButts />
+      <PigButts
+        @adopt="adopt"
+        @edit="_ => edit = true"
+      />
     </v-card-actions>
 
   </v-card>
@@ -25,6 +38,38 @@ import PigButts from './PigButts'
 export default {
   components: {
     PigButts,
+  },
+
+  props: {
+    desc: {
+      type: String,
+      required: true,
+    },
+
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+
+  data: _ => ({
+    edit: false,
+    currentDesc: '',
+  }),
+
+  created() {
+    this.currentDesc = this.desc
+  },
+
+  methods: {
+    adopt() {
+      this.$emit('pigHomed', this.name)
+    },
+
+    changeDesc() {
+      this.edit = false
+      this.$emit('descChanged', { name: this.name, desc: this.currentDesc })
+    },
   },
 }
 </script>
