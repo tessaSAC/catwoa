@@ -46,7 +46,7 @@ export default {
   },
 
   data: _ => ({
-    currentPigs: [ { name: 'beepo', desc: 'hello' } ],
+    currentPigs: [ { name: 'Beepo', desc: 'a very good boy' } ],
 
     numAdopted: 0,
 
