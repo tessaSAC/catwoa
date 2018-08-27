@@ -57,7 +57,10 @@ export default {
   methods: {
     addPig() {
       if (!this.pigNames.length) return alert('outta names! <(○｀（●●）´○)>')
-      this.currentPigs.push({ name: this.pigNames.pop() })
+
+      const name = this.pigNames.pop()
+      this.currentPigs.push({ name, desc: '' })
+      this.selectedNames.push(name)
     },
 
     except(original, unwanted) {
@@ -73,7 +76,7 @@ export default {
       while (currentIndex) {
         // Pick a remaining element...
         randomIdx = Math.floor(Math.random() * currentIndex)
-        currentIndex -= 1
+        --currentIndex
         // And swap it with the current element.
         tempVal = arr[currentIndex]
         arr[currentIndex] = arr[randomIdx]
