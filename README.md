@@ -1,5 +1,10 @@
 # catwoa
 
+An app to keep track of shelter guinea pig intake and adoption
+Rearchitected remake of previous version, [Cavuea](https://github.com/tessaSAC/cavuea)
+
+[Live demo](https://tessasac.github.io/catwoa)
+
 ## Project setup
 ```
 yarn install
